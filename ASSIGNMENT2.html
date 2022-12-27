@@ -1,0 +1,208 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  </head>
+  <body>
+    <h3 class="text-center mt-3 text-dark">Billing System</h3>
+        <div class="container mt-3 h-10 w-25 pr-4 bg-light">
+            
+            <tr>
+                <td>
+                    <label style="font-size: 18px; font: size 18px;font-weight: bold; " class="ml-4 bold" for="">Order No.</label>
+                    <input id="orderno" class="ml-4 form-control" type="number">
+                </td>
+            </tr>
+            
+            <tr>
+                <td>
+                    <label style="font-size: 18px; font: size 18px;font-weight: bold; "class="ml-4 bold" for="">Order Date.</label>
+                    <input id="orderdate" class="ml-4 form-control" type="date">
+                </td>
+            </tr>
+            <br>
+            <tr>
+                <td></td>
+            </tr>
+                <td>
+                    <label style="font-size: 18px; font: size 18px;font-weight: bold; "class="ml-4 display-5" for="">Customer ID.</label>
+                    <input id="customerid" class="ml-4 form-control" type="text">
+                </td>
+            </tr>
+        
+        </div>
+        <div class="container mt-2 pb-2 bg-light">
+        
+            <fieldset style="width: 50%">
+                <legend>Product Details</legend>
+                <table >
+            <tr>
+                <td><label for="">Product Name</label></td>
+                <td><input  type="text" name="" id="product"></td>
+            </tr>
+            <br>
+            <tr>
+                <td><label for="">Unit Size</label></td>
+                <td><input type="number" name="" id="price"></td>
+            </tr>
+            <br>
+            <tr>
+                <td><label for="">Sale Qty.</label></td>
+                <td><input type="number" name="" id="quantity"></td>
+            </tr>
+            <tr>
+                <td>
+            <button onclick="addtocart()"  id="entry">ADD TO CART</button>
+           </td>
+        </tr>
+        </table>
+    </fieldset>
+
+        </div>
+        <div class="container">
+             <div class="row">
+                <div class="col-6">
+                    <table style="padding: 10px;" border="10PX
+                     "  id="table">
+                        <trv class="p-5">
+                            <th  id="p-3">product </th>
+                            <th class="p-3">PRICE</th>
+                            <th class="p-3"w-25>Quantity</th>
+                            <th>TOtal amount</th>
+                        </tr>
+                    </table>
+                </div>
+                <div class="col-6">
+                    <fieldset class="bg-light mt-4">
+                    <table class="">
+                    <tr>
+                        <td><label style="color: red;" for="">VAT-SAt.</label></td>
+                        <td style="color: red;"><input style="width: 50PX; color: red;"  type="number" name="" id="">% </td>
+                       
+                    </tr>
+                    
+                    <tr>
+                        <td><label style="color: red;" for="">DISCOUNT.</label></td>
+                        <td style="color: red;"><input style="width: 50PX; color: red;" type="number" name="" id="">%</td>
+                        
+                    </tr>
+                    <br>
+                    <tr>
+                        <td><label for="">Grand Total.</label></td>
+                        <td><input type="number" name="" id=""></td>
+                    </tr>
+                    <tr>
+                        <td><label for="">Total Payment.</label></td>
+                        <td><input type="number" name="" id=""></td>
+                    </tr>
+                </table>
+            </fieldset>
+                </div>
+             </div>
+
+
+        </div>
+        <script>
+            function addtocart(){
+              
+              var row = 1;
+              var product = document.getElementById("product").value;
+              var price = document.getElementById("price").value;
+              var quantity = document.getElementById("quantity").value;
+              
+              var table = document.getElementById("table");
+              var newRow = table.insertRow(row);
+              var cell1 = newRow.insertCell(0);
+              var cell2 = newRow.insertCell(1);
+              var cell3 = newRow.insertCell(2);
+              var cell4 = newRow.insertCell(3);
+              cell1.innerHTML= product;
+              cell2.innerHTML= price;
+              cell3.innerHTML= quantity;
+        
+              var amount = price * quantity;
+              cell4.innerHTML= amount;
+              row++;
+        
+        
+            }
+        
+              function totalamount(){
+          
+              var a=0;
+              for(let i = 1; i< table.rows.length; i++){
+                a=a + parseInt(table.rows[i].cells[3].innerHTML);
+        
+                document.getElementById("all").innerHTML = a;
+               
+              }
+        
+            }
+        
+        </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            <!-- var entry=document.getElementById("entry").value;
+            entry.addEventListener("click", displaydetails);
+             var row=1;
+            function displaydetails(){
+                 var name = document.getElementById("ProductName").value;
+                 var size = document.getElementById("UnitSize").value;
+                 var sale = document.getElementById("sale").value;
+                if( !ProductName ||  !UnitSize || !sale ) {
+                    alert("enter information")
+                     return;    
+
+                 }
+                  else
+                  {
+                var display =document.getElementById("display");
+                var newRow= display.insertRow(row);
+
+                var cell1= newRow.insertCell(0);
+                 var cell1= newRow.insertCell(1);
+                 var cell1= newRow.insertCell(2);
+
+                 cell1.innerHTML=ProductName;
+                 cell1.innerHTML=UnitSize;
+                 cell1.innerHTML=sale;
+                 row++; -->
+
+
+        </script>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  </body>
+</html>

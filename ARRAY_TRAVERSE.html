@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+    //     // let data = [9,45,2,84,23,7,78,0,11,41,77];
+    //     // for(let i=0;i<data.length;i++)
+    //     // {
+    //     //     document.write(`Array ${i} is ${data[i]} <br>`)
+    //     //                 let x=3;
+    //     // }
+    //     let data=[60,30,10,67,40];
+    //     let newEL=70;
+    //     let position=2;
+    // for(i=data.length;i>=0;i--);
+    // {
+    //     console.warn(data[i])
+    //     // if (i>=position)
+    //     // {
+    //     //     data[]
+    //     // }
+    // }
+    // class  list{
+    //     constructor(data){
+    //         this.head={
+    //             value :data,
+    //             next:null,
+    //         };
+    //         this.tail=this.head;
+
+
+    //     }
+
+    // }
+    // let list = new list(100);
+    // console.warn(list);
+//     class linkedList{
+
+//     }
+//     const arr = [];
+// let head = linkedList;
+    
+// while (head !== null) {
+//   arr.push(head.val);
+//   head = head.next;
+// }
+
+// console.log(arr);
+let nums = [2,0,2,1,1,0]
+// Output: [0,0,1,1,2,2]
+for (let index = 0; index < nums.length; index++) {
+    
+    for (let j = 0; j < nums.length; j++) {
+        if (nums[j]>nums[j+1]) {
+           let temp=nums[j];
+            // console.log(temp);
+            nums[j]=nums[j+1];
+            nums[j+1]=temp;
+            
+        }
+        
+       console.log(nums); 
+    }
+    
+}
+
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
